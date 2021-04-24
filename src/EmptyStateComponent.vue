@@ -5,7 +5,7 @@
     </div>
     <h3 class="title-outline">{{ title }}</h3>
     <p class="subtitle-outline">{{ subTitle }}</p>
-    <button @click="$emit('click')">Call to action!</button>
+    <button v-if="hasButton" @click="$emit('click')">Call to action!</button>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ import defualtImage from "@/assets/shrug-emoji.png";
  */
 export default {
   name: "empty-state-component",
+  data(){
+    return {
+      hasButton: false
+    }
+  },
   props: {
     data: {
       type: [Array, String, Object, Boolean, Number],
@@ -39,8 +44,13 @@ export default {
       type: String,
       default: "We couldn't find anything to show and thats all we know",
       required: false,
-    },
+    }
   },
+  created(){
+    console.log(this.$listeners.click)
+    if(typeof this.$listeners.click ==='function') this.hasButton = true;
+  },
+
   methods:{
     isEmpty(data){
       // gets a data of any type and determains if empty

@@ -1,11 +1,13 @@
 <template>
   <section id="app">
-    <empty-state-component :data="data" v-on:click="clicked"/>
+    <empty-state-component :data="data" v-on:click="counter++"/>
     <div class="data-content">
       The Data Content:
-      <div>
+      <p>
         {{ data }}
-      </div>
+      </p>
+      The call to action clicked {{counter}} times.
+
       <p>
         <button @click="data = objectExample">Set Object Example</button>
         <button @click="data = arrayEample">Set Array Example</button>
@@ -27,6 +29,7 @@ export default {
   name: "Example",
   data() {
     return {
+      counter:0,
       data: false,
       objectExample: { key: "value" },
       arrayEample: ["example"],
@@ -39,9 +42,6 @@ export default {
     };
   },
   methods:{
-    clicked(){
-      console.log("YOOHOO")
-    }
   }
 };
 </script>
