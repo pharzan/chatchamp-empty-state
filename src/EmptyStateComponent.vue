@@ -3,8 +3,8 @@
     <div class="shrug-wrapper">
       <img class="shrug-outline" :src="image" />
     </div>
-    <h3 class="title-outline">{{ title }}</h3>
-    <p class="subtitle-outline">{{ subTitle }}</p>
+    <p class="text title-outline">{{ title }}</p>
+    <p class="text subtitle-outline">{{ subTitle }}</p>
     <button v-if="hasButton" @click="$emit('click')">Call to action!</button>
   </div>
 </template>
@@ -21,7 +21,6 @@ export default {
   name: "empty-state-component",
   data(){
     return {
-      hasButton: false
     }
   },
   props: {
@@ -37,7 +36,7 @@ export default {
     },
     title: {
       type: String,
-      default: "Nothing to show here...",
+      default: "Nothing to show here",
       required: false,
     },
     subTitle: {
@@ -46,9 +45,12 @@ export default {
       required: false,
     }
   },
-  created(){
-    console.log(this.$listeners.click)
-    if(typeof this.$listeners.click ==='function') this.hasButton = true;
+  computed:{
+    hasButton(){
+      if(typeof this.$listeners.click ==='function') return true;
+      return false
+
+    }
   },
 
   methods:{

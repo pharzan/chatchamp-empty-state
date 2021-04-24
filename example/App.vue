@@ -1,6 +1,9 @@
 <template>
   <section id="app">
-    <empty-state-component :data="data" v-on:click="counter++"/>
+    <h2>Empty state component</h2>
+    <empty-state-component v-if="hasAction" :data="data" v-on:click="counter++"/>
+    <empty-state-component v-else :data="data" />
+
     <div class="data-content">
       The Data Content:
       <p>
@@ -13,12 +16,16 @@
         <button @click="data = arrayEample">Set Array Example</button>
         <button @click="data = stringExample">Set String Example</button>
         <button @click="data = numberExample">Set Number Example</button>
+        <button @click="hasAction = true">Add Counter Action Example</button>
+
       </p>
       <p>
-        <button @click="data = objectExampleEmpty">Set Object Example</button>
-        <button @click="data = arrayEampleEmpty">Set Array Example</button>
-        <button @click="data = stringExampleEmpty">Set String Example</button>
-        <button @click="data = numberExampleEmpty">Set Number Example</button>
+        <button @click="data = objectExampleEmpty">Empty Object Example</button>
+        <button @click="data = arrayEampleEmpty">Empty Array Example</button>
+        <button @click="data = stringExampleEmpty">Empty String Example</button>
+        <button @click="data = numberExampleEmpty">Empty Number Example</button>
+        <button @click="hasAction = false">Remove Counter Action Example</button>
+
       </p>
     </div>
   </section>
@@ -29,6 +36,7 @@ export default {
   name: "Example",
   data() {
     return {
+      hasAction:true,
       counter:0,
       data: false,
       objectExample: { key: "value" },
@@ -40,8 +48,6 @@ export default {
       stringExampleEmpty: "",
       numberExampleEmpty: NaN,
     };
-  },
-  methods:{
   }
 };
 </script>
