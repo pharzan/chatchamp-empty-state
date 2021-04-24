@@ -5,7 +5,7 @@
     </div>
     <h3 class="title-outline">{{ title }}</h3>
     <p class="subtitle-outline">{{ subTitle }}</p>
-    <button>Call to action</button>
+    <button @click="$emit('click')">Call to action!</button>
   </div>
 </template>
 

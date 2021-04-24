@@ -1,6 +1,6 @@
 <template>
   <section id="app">
-    <empty-state-component :data="data" />
+    <empty-state-component :data="data" v-on:click="clicked"/>
     <div class="data-content">
       The Data Content:
       <div>
@@ -38,6 +38,11 @@ export default {
       numberExampleEmpty: NaN,
     };
   },
+  methods:{
+    clicked(){
+      console.log("YOOHOO")
+    }
+  }
 };
 </script>
 
