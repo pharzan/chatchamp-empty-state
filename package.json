@@ -1,0 +1,35 @@
+{
+  "name": "chatchamp-empty-state",
+  "version": "1.0.0",
+  "description": "just another empty state component",
+  "author": "pharzan",
+  "scripts": {
+    "test:unit": "vue-cli-service test:unit",
+    "dev": "vue serve src/components/EmptyStateComponent.vue",
+    "test": "jest"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^26.6.3",
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/test-utils": "^1.1.4"
+  },
+  "bugs": {
+    "url": "https://github.com/pharzan/chatchimp-empty-state/issues"
+  },
+  "homepage": "https://github.com/pharzan/chatchimp-empty-state#readme",
+  "keywords": [
+    "empty",
+    "state",
+    "vue",
+    "component"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pharzan/chatchimp-empty-state.git"
+  }
+}
