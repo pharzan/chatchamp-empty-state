@@ -1,22 +1,44 @@
 <template>
   <section id="app">
-    <empty-state-component :data="nothingToShow"/>
-    <div>
-      Some content
-      <button @click="nothingToShow=!nothingToShow">Toggle</button>
+    <empty-state-component :data="data" />
+    <div class="data-content">
+      The Data Content:
+      <div>
+        {{ data }}
+      </div>
+      <p>
+        <button @click="data = objectExample">Set Object Example</button>
+        <button @click="data = arrayEample">Set Array Example</button>
+        <button @click="data = stringExample">Set String Example</button>
+        <button @click="data = numberExample">Set Number Example</button>
+      </p>
+      <p>
+        <button @click="data = objectExampleEmpty">Set Object Example</button>
+        <button @click="data = arrayEampleEmpty">Set Array Example</button>
+        <button @click="data = stringExampleEmpty">Set String Example</button>
+        <button @click="data = numberExampleEmpty">Set Number Example</button>
+      </p>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Example',
-  data(){
-    return{
-      nothingToShow:false
-    }
-  }
-}
+  name: "Example",
+  data() {
+    return {
+      data: false,
+      objectExample: { key: "value" },
+      arrayEample: ["example"],
+      stringExample: "example",
+      numberExample: 1,
+      objectExampleEmpty: { },
+      arrayEampleEmpty: [],
+      stringExampleEmpty: "",
+      numberExampleEmpty: NaN,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -27,5 +49,7 @@ export default {
   flex-flow: column;
   align-items: center;
 }
-
+.data-content{
+  margin-top: 50px;
+}
 </style>
