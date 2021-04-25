@@ -54,9 +54,10 @@ export default {
 
 <style lang="scss">
 #app {
+  font-family: 'Courier New', Courier, monospace;
   display: flex;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 30px;
   flex-flow: column;
   align-items: center;
 }

@@ -4,7 +4,7 @@ import EmptyStateComponent from '../../src/EmptyStateComponent';
 
 describe('EmptyStateComponent.vue', () => {
 
-  it('initializes with correct elements', () => {
+  it('initializes with correct elements no button', () => {
     //no button
     const wrapper = shallowMount(EmptyStateComponent, {
       propsData: {
@@ -22,7 +22,7 @@ describe('EmptyStateComponent.vue', () => {
 
   })
 
-  it('initializes with correct elements', () => {
+  it('initializes with correct elements with button', () => {
     //with button
     const onClick = jest.fn();
     const wrapper = shallowMount(EmptyStateComponent, {
@@ -61,5 +61,6 @@ describe('EmptyStateComponent.vue', () => {
     })
     expect(wrapper.text()).toMatch(subTitle)
   })
+
 
 })

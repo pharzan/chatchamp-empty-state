@@ -1,7 +1,7 @@
 <template>
   <div v-if="!isEmpty(data)" class="empty_state">
-    <div class="shrug-wrapper">
-      <img class="shrug-outline" :src="image" />
+    <div class="image-wrapper">
+      <img class="image-outline" :src="image" />
     </div>
     <p class="text title-outline">{{ title }}</p>
     <p class="text subtitle-outline">{{ subTitle }}</p>
@@ -11,7 +11,7 @@
 
 <script>
 import "./styles/index.scss";
-import defualtImage from "@/assets/shrug-emoji.png";
+import defualtImage from "@/assets/haunted-house.svg";
 
 
 /**
