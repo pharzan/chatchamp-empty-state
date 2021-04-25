@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import EmptyStateComponent from '../../src/EmptyStateComponent';
+import EmptyStateComponent from '../../src/EmptyState';
 
 
-describe('EmptyStateComponent.vue', () => {
+describe('EmptyState.vue', () => {
 
   it('initializes with correct elements no button', () => {
     //no button

@@ -12,8 +12,6 @@
 
 <img  alt="poi"  src="https://img.shields.io/badge/poi-10-green.svg?style=for-the-badge"/>
 
-<img  alt="Bili"  src="https://img.shields.io/badge/bili-3-blue.svg?style=for-the-badge"/>
-
 </p>
 
   
@@ -27,12 +25,10 @@
 
 - Vue Empty state component
 
+Yet another empty state component. The Basic idea is that you can place the component anywhere in your code and pass in the data object. The component will listen to the data object and when ever it is empty it will show the component conents.
+
  
-  
-
 ## Screenshots
-
-  
 
 <p  align="center">
 
@@ -46,7 +42,7 @@
 
   
 
-## Install and Usage
+## Demo
 
   
 
@@ -67,42 +63,55 @@ yarn
 # to run the demo
 
 yarn demo
+```
 
-  
+Locate to http://localhost:4000
 
-# to run the component
+```sh
+
+# to run the component alone
 
 yarn dev
 
-  
 
 # to run the tests
 
 yarn test
 
  ````
-  
+
+## Instalation and usage
+
+To install the component you can use the following to install it in your project.
+
+````bash
+
+npm install --save chatchamp-empty-state
+
+````
 
 To use the component anywhere in your project, place the source code somewhere in your components folder in your project and use it as a component in the App.vue file.
 
-  
 
 ````js
-import EmptyStateComponent from '../src'
-Vue.component('EmptyStateComponent', EmptyStateComponent)
+import EmptyState from 'chatchamp-empty-state'
+Vue.component('EmptyState', EmptyState)
 ````
 
 Now you can use the tag anywhere in your project and pass in the parameters to control the component
 
 `````js
-<empty-state-component :data="data" v-on:click="counter++"/>
+<EmptyState :data="data" v-on:click="counter++"/>
 `````
 
-  
+to add the style you need to import the styles from the dist folder.
+
+```js
+import 'chatchamp-empty-state/dist/chatchamp-empty-state.css'
+```
 
 ## API
 
-  
 
 <details><summary><strong>Component parameters:</strong></summary>
 
@@ -110,68 +119,39 @@ Now you can use the tag anywhere in your project and pass in the parameters to c
 
   
 
-1. **`value`**: Number
+1. **`data`**: Number, String, Object, Array
 
-  
+2. **`image`**: String
 
-2. **`on-when`**: Function
+The image to be displayed
+
+3. **`title`**: String
+
+The Title to be displayed
+
+4. **`subTitle`**: String
+
+The subTitle to be displayed
+
+5. **`on-click`**: Function
 
 **params**: func ( ...param )
+function  when the callback button is clicked
 
-hook function  when ...
-
-  
 
 <br/>
 
 </details>
 
+
+## Tests
+
+To run the test 
+
+````
+npm run test
+````
   
 
-<details><summary><strong>Much more APIs</strong></summary>
+##  License
 
-<br>
-
-  
-
-1. **`more`**: Boolean
-
-**default**: `false`
-
-...
-
-  
-
-<br/>
-
-</details>
-
-  
-
-<details><summary><strong>Categorize them</strong></summary>
-
-<br>
-
-  
-
-1. **`categorize`**: Object
-
-...
-
-  
-
-<br/>
-
-</details>
-
-  
-
-<br>
-
-  
-
-## Other things such as Contribute guide / License / Thanks ...
-
-  
-
-> It's your turn

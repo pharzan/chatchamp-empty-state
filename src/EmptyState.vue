@@ -1,9 +1,8 @@
 <template>
-  <div v-if="!isEmpty(data)" class="empty_state">
+  <div v-if="isEmpty(data)" class="empty_state">
     <div class="image-wrapper">
       <img v-if="image" class="image-outline" :src="image" />
       <img v-else class="image-outline" src="~@/assets/haunted-house.svg" />
-
     </div>
     <p class="text title-outline">{{ title }}</p>
     <p class="text subtitle-outline">{{ subTitle }}</p>
@@ -17,10 +16,6 @@ import "./styles/index.scss";
 
 export default {
   name: "EmptyState",
-  data(){
-    return {
-    }
-  },
   props: {
     data: {
       type: [Array, String, Object, Boolean, Number],
@@ -53,11 +48,9 @@ export default {
   methods:{
     isEmpty(data){
       // gets a data of any type and determains if empty
-      if(!data) return true;
+      if(!data) return true
       if(Array.isArray(data) && !data.length) return true
       if(typeof data==='object' && !Object.keys(data).length) return true
-
-
       return false
     }
   }
