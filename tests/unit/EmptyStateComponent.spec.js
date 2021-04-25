@@ -8,7 +8,7 @@ describe('EmptyState.vue', () => {
     //no button
     const wrapper = shallowMount(EmptyStateComponent, {
       propsData: {
-        data: 1
+        data: []
       }
     });
 
@@ -27,7 +27,7 @@ describe('EmptyState.vue', () => {
     const onClick = jest.fn();
     const wrapper = shallowMount(EmptyStateComponent, {
       propsData: {
-        data: 1
+        data: []
       },
       listeners: {
         click: onClick
@@ -48,7 +48,7 @@ describe('EmptyState.vue', () => {
     const title = 'This is some title'
     const wrapper = shallowMount(EmptyStateComponent, {
       propsData: { 
-        data:1,
+        data:[],
         title }
     })
     expect(wrapper.text()).toMatch(title)
@@ -57,9 +57,47 @@ describe('EmptyState.vue', () => {
   it('renders props.subTitle when passed', () => {
     const subTitle = 'This is some subtitle'
     const wrapper = shallowMount(EmptyStateComponent, {
-      propsData: { subTitle, data:1 }
+      propsData: { subTitle, data:[] }
     })
     expect(wrapper.text()).toMatch(subTitle)
+  })
+
+  it('checks full array', () => {
+    const data = [1,2,3,4,6,7]
+    const wrapper = shallowMount(EmptyStateComponent, {
+      propsData: { data }
+    })
+    expect(wrapper.exists('.empty_state')).toBeTruthy();
+
+  })
+
+  it('checks Object with some keys and values', () => {
+    const data = {
+      key: "value"
+    }
+    const wrapper = shallowMount(EmptyStateComponent, {
+      propsData: { data }
+    })
+    expect(wrapper.exists('.empty_state')).toBeTruthy();
+
+  })
+
+  it('checks an empty string', () => {
+    const data = "Hello world"
+    const wrapper = shallowMount(EmptyStateComponent, {
+      propsData: { data }
+    })
+    expect(wrapper.exists('.empty_state')).toBeTruthy();
+
+  })
+
+  it('checks boolean', () => {
+    const data = true
+    const wrapper = shallowMount(EmptyStateComponent, {
+      propsData: { data }
+    })
+    expect(wrapper.exists('.empty_state')).toBeTruthy();
+
   })
 
 })

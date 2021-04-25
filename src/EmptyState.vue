@@ -12,7 +12,6 @@
 
 <script>
 import "./styles/index.scss";
-// import image from './assets/haunted-house.svg'
 
 export default {
   name: "EmptyState",
@@ -48,9 +47,12 @@ export default {
   methods:{
     isEmpty(data){
       // gets a data of any type and determains if empty
-      if(!data) return true
-      if(Array.isArray(data) && !data.length) return true
+
+      if(Array.isArray(data) && data.length===0) return true
       if(typeof data==='object' && !Object.keys(data).length) return true
+      if(typeof data==='string' && data.length===0) return true
+      if(!data) return true
+      
       return false
     }
   }

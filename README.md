@@ -151,7 +151,11 @@ To run the test
 ````
 npm run test
 ````
-  
+
+## Future improvments
+
+1. use slots and templates to improve re-usability
+2. add more preset scenarios for different usages with texts and icons ex. search, table, ...
 
 ##  License
 
