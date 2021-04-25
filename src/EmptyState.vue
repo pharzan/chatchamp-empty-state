@@ -1,7 +1,9 @@
 <template>
   <div v-if="!isEmpty(data)" class="empty_state">
     <div class="image-wrapper">
-      <img class="image-outline" :src="image" />
+      <img v-if="image" class="image-outline" :src="image" />
+      <img v-else class="image-outline" src="~@/assets/haunted-house.svg" />
+
     </div>
     <p class="text title-outline">{{ title }}</p>
     <p class="text subtitle-outline">{{ subTitle }}</p>
@@ -11,14 +13,10 @@
 
 <script>
 import "./styles/index.scss";
-import defualtImage from "@/assets/haunted-house.svg";
+// import image from './assets/haunted-house.svg'
 
-
-/**
- * Component documentation
- */
 export default {
-  name: "empty-state-component",
+  name: "EmptyState",
   data(){
     return {
     }
@@ -31,7 +29,7 @@ export default {
     },
     image: {
       type: String,
-      default: defualtImage,
+      // default: image,
       required: false,
     },
     title: {
@@ -49,7 +47,6 @@ export default {
     hasButton(){
       if(typeof this.$listeners.click ==='function') return true;
       return false
-
     }
   },
 

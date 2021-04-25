@@ -62,5 +62,4 @@ describe('EmptyStateComponent.vue', () => {
     expect(wrapper.text()).toMatch(subTitle)
   })
 
-
 })

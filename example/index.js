@@ -1,8 +1,8 @@
 import Vue from 'vue/dist/vue.esm'
 import App from './App.vue'
-import EmptyStateComponent from '../src'
+import EmptyState from '../src/main'
 
-Vue.component('EmptyStateComponent', EmptyStateComponent)
+Vue.component('EmptyState', EmptyState)
 
 /* eslint-disable no-new */
 new Vue({

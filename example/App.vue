@@ -1,8 +1,8 @@
 <template>
   <section id="app">
     <h2>Empty state component</h2>
-    <empty-state-component v-if="hasAction" :data="data" v-on:click="counter++"/>
-    <empty-state-component v-else :data="data" />
+    <EmptyState v-if="hasAction" :data="data" v-on:click="counter++"/>
+    <EmptyState v-else :data="data" />
 
     <div class="data-content">
       The Data Content:

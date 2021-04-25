@@ -1,16 +1,26 @@
 {
   "name": "chatchamp-empty-state",
-  "version": "1.0.0",
+  "version": "1.0.18",
   "description": "just another empty state component",
   "author": "pharzan",
   "scripts": {
     "test:unit": "vue-cli-service test:unit",
     "demo": "poi example/index.js --serve",
-    "dev": "vue serve src/EmptyStateComponent.vue",
-    "test": "jest tests/unit"
+    "dev": "vue serve src/EmptyState.vue",
+    "build": "vue-cli-service build --target lib --name empty-state ./src/main.js",
+    "test": "jest tests/unit",
+    "build:local": "vue-cli-service build --target lib src/main.js && npm pack"
   },
-  "main": "index.js",
-  "dependencies": {
+  
+  "main": "./dist/empty-state.common.js",
+  "module": "dist/my-component.esm.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json"
+  ],
+    "dependencies": {
+    "@vue/cli-service": "^4.5.12",
     "node-sass": "^5.0.0",
     "sass-loader": "^10",
     "vue": "^2.6.12",
@@ -21,6 +31,7 @@
     "@vue/cli-plugin-unit-jest": "^4.5.12",
     "@vue/test-utils": "^1.1.4",
     "babel-core": "^7.0.0-bridge.0",
+    "bili": "^5.0.5",
     "poi": "^12.10.3"
   },
   "bugs": {
